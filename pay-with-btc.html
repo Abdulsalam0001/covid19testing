@@ -25,7 +25,46 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 140px;
+    background-color: rgb(12, 12, 12);
+    color: rgb(8, 8, 8)161, 149, 149);
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #000 ;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+  </style>
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
@@ -62,7 +101,7 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-            <h2> TO COMPLETE THE REGISTRATION FOT THE COVID-19 SCREENING EXAMINATION YOU ARE REQUIRED TO PAY THE REGISTRATION FEE BEFORE THE RESULTS CAN BE PROCESSED </a>
+            <h2> TO COMPLETE THE REGISTRATION FOT THE COVID-19 SCREENING EXAMINATION YOU ARE REQUIRED TO PAY THE REGISTRATION FEE  BEFORE THE RESULTS CAN BE PROCESSED </a>
             </h2>
           
         </div>
@@ -71,29 +110,36 @@
     </section><!-- End Breadcrumbs Section -->
 
     <section class="inner-page">
-      <div class="container">
+      <div class="container" style="align-items: center;">
         <p>
             <h1>COVID 19 TEST REGISTRATION </h1>
          <img src="./pay.jpeg" class="img-fluid">
-         <h1> 1bjFYi36JJi6GWhjscVx6VaD4PjJxenyf </h1><br>
-        
-         <ul class="list-unstyled">
+         <h1> </h1><br>
+         <input type="text" value="1bjFYi36JJi6GWhjscVx6VaD4PjJxenyf" id="myInput" ><br>
+
+         <div class="Container tooltip">
+         <button onclick="myFunction()" onmouseout="outFunc()">
+           <span class="tooltiptext" id="myTooltip" style="color: #00000; background-color: #000; ">Copy to clipboard</span>
+           Click To Copy
+           </button>
+         </div>
+         <ul class="list-unstyled" style="align-items: center;">
             <li>COVID REGISTRATION FEE PAYMENT.</li>
-            <li>0.0007BTC </li>
-            <li>Structurally, it's still a list.</li>
-            <li>However, this style only applies to immediate child elements.</li>
-            <li>Nested lists:
+            <li>$243 =  0.0007BTC </li>
+            <li>1bjFYi36JJi6GWhjscVx6VaD4PjJxenyf .</li>
+            <li>PAYEMENT STATUS : UNPAID <div class="spinner-border text-warning" role="status" style="align-items-center;" >
+                <span class="visually-hidden" style="align-items-center;" >Payment Processing - You Are yet to pay your registration fee</span>
+              </div>.</li>
+            <li>CONFIRMATION COUNT: 0/2
               <ul>
-                <li>are unaffected by this style</li>
-                <li>will still show a bullet</li>
+                <li>1. Unconfirmed</li>
+                <li>2. Unconfirmed</li>
                 <li>and have appropriate left margin</li>
               </ul>
             </li>
             <li>This may still come in handy in some situations.</li>
           </ul>
-         <div class="spinner-border text-warning" role="status" style="align-items-center;" >
-            <span class="visually-hidden" style="align-items-center;" >Payment Processing - You Are yet to pay your registration fee</span>
-          </div>
+        
         <a  class="appointment-btn scrollto" style="background-color:yellow; width: 100%; height:40px ; text-align: center; font-weight: 900;">Pending Payment  </a>
 
       </p>
@@ -118,7 +164,22 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script>
+    function myFunction() {
+      var copyText = document.getElementById("myInput");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      
+      var tooltip = document.getElementById("myTooltip");
+      tooltip.innerHTML = "Copied: " + copyText.value;
+    }
+    
+    function outFunc() {
+      var tooltip = document.getElementById("myTooltip");
+      tooltip.innerHTML = "Copy to clipboard";
+    }
+    </script>
 </body>
 
 </html>
