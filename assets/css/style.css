@@ -311,7 +311,7 @@ h1, h2, h3, h4, h5, h6 {
 * Mobile Navigation 
 */
 .mobile-nav-toggle {
-  color: #ffffff;
+  color: #000000;
   font-size: 28px;
   cursor: pointer;
   display: none;
@@ -320,7 +320,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mobile-nav-toggle.bi-x {
-  color: #fff;
+  color: #000;
 }
 
 @media (max-width: 991px) {
